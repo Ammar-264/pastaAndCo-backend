@@ -35,7 +35,7 @@ router.get('/getParties',async(req,res)=>{
    
   const parties = await PartyModel.find()
 
-  res.status(200).json({data:parties})
+  res.status(200).json({data:parties,msg:'parties fetched'})
 
 })
 

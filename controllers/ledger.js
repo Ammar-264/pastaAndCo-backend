@@ -277,5 +277,5 @@ exports.getLedgersOfParty = async (req, res) => {
    
     }
   
-  res.status(200).json({ data: sorted_ledgers });
+  res.status(200).json({ data: sorted_ledgers ,msg:'ledgers fetched .'});
 };

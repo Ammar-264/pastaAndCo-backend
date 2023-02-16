@@ -1,13 +1,14 @@
 const express = require('express')
 const { addTodayWages, addNewWage, deleteWage, getWages, getAllDaysWages } = require('../controllers/dailyWages')
 const router = express.Router()
+const WagesModel = require('../models/dailyWages')
 
 router.post('/addNewWage/:id',addNewWage)
 router.delete('/deleteWage/:id/:wageId',deleteWage)
 router.get('/getWages/:id',getWages)
 router.get('/getAllDaysWages',getAllDaysWages)
 
-router.get('/addWageTable',async(req,res)=>{
+router.post('/addWageTable',async(req,res)=>{
 
     let todayDate = `${new Date().getFullYear()}-${
         new Date().getMonth() + 1
